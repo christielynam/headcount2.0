@@ -20,4 +20,17 @@ export default class DistrictRepository {
       return this.data[found];
     }
   }
+
+  findAllMatches(string) {
+    const dataKeys = Object.keys(this.data)
+    const dataArray = dataKeys.map( key => this.data[key] )
+
+    if (string) {
+      return dataArray.filter( object => object.location.includes(string.toUpperCase()))
+    }
+
+    return dataArray
+  }
+
+
 }
