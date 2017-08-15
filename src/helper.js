@@ -8,7 +8,7 @@ export default class DistrictRepository {
       if (!acc[obj.Location]) {
         acc[obj.Location] = {location: obj.Location.toUpperCase(), data: {}};
       }
-      acc[obj.Location].data[obj.TimeFrame] = Math.round(1000 * obj.Data) / 1000;
+      acc[obj.Location].data[obj.TimeFrame] = Math.round(1000 * obj.Data) / 1000 || 0;
       return acc;
     }, {})
   }
@@ -18,8 +18,6 @@ export default class DistrictRepository {
       const locationKeys = Object.keys(this.data);
       const found = locationKeys.find(location => location.toUpperCase() === string.toUpperCase());
       return this.data[found];
-    } else {
-      return undefined;
     }
   }
 }
