@@ -6,10 +6,20 @@ export default class DistrictRepository {
   filterData(kinderData) {
     return kinderData.reduce((acc, obj) => {
       if (!acc[obj.Location]) {
-        acc[obj.Location] = [];
+        acc[obj.Location] = {location: obj.Location.toUpperCase(), data: {}};
       }
-      acc[obj.Location].push(obj);
+      acc[obj.Location].data[obj.TimeFrame] = Math.round(1000 * obj.Data) / 1000;
       return acc;
     }, {})
+  }
+
+  findByName(string) {
+    if (string) {
+      const locationKeys = Object.keys(this.data);
+      const found = locationKeys.find(location => location.toUpperCase() === string.toUpperCase());
+      return this.data[found];
+    } else {
+      return undefined;
+    }
   }
 }
