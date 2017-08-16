@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import DataCard from './DataCard';
 import PropTypes from 'prop-types';
 
-
 const BottomContainer = ({ schoolData }) => {
 
     return (
-      <div className='bottomContainer'>
+      <div className='bottom-container'>
 
       {
         schoolData.map( object =>

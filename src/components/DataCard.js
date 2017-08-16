@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-
-
 const DataCard = ({ location, data }) => {
 
   const yearKeys = Object.keys(data)
     return (
-      <div className='dataCard'>
-        <h3 className='schoolDistrict'>{location}</h3>
+      <div className='data-card'>
+        <h3 className='school-district'>{location}</h3>
         {
-          yearKeys.map( (year, i) => <p className='schoolData' key={i}>{year} : {data[year]}</p> )
+          yearKeys.map( (year, i) => <p className='school-data' key={i}>{year} : {data[year]}</p> )
         }
       </div>
     );
