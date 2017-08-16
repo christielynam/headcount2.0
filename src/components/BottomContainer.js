@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const BottomContainer = ({ schoolData }) => {
 
     return (
-      <div>
+      <div className='bottomContainer'>
 
       {
         schoolData.map( object =>
@@ -22,7 +22,7 @@ const BottomContainer = ({ schoolData }) => {
 }
 
 BottomContainer.propTypes = {
-  schoolData: PropTypes.array 
+  schoolData: PropTypes.array
 }
 
 export default BottomContainer;

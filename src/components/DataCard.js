@@ -7,12 +7,11 @@ const DataCard = ({ location, data }) => {
 
   const yearKeys = Object.keys(data)
     return (
-      <div>
+      <div className='dataCard'>
         <h3 className='schoolDistrict'>{location}</h3>
         {
           yearKeys.map( (year, i) => <p className='schoolData' key={i}>{year} : {data[year]}</p> )
         }
-
       </div>
     );
 }
