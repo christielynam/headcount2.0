@@ -1,4 +1,53 @@
 /*APP COMPONENT RELATED CSS GOES HERE*/
 * {
-  background-color: #fff;
+  background-color: #FFF;
+}
+
+input {
+  height: 30px;
+  width: 250px;
+  margin: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+h1 {
+  padding-left: 20px;
+  color: gray;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dataCard {
+  width: 250px;
+  margin: 20px;
+  padding: 20px 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.dataCard,
+h3,
+p {
+  background-color: #1E2023;
+}
+
+h3 {
+  color: magenta;
+  font-size: 22px;
+}
+
+p {
+  color: #CCCCFF;
+  font-size: 16px;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
 }

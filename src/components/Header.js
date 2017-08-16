@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 
 const Header = (props) => {
     return (
-      <div>
+      <div className='header'>
+        <h1>Headcount 2.0... School is Kewl</h1>
         <Search search={props.search} />
-        <h1>Headcount 2.0</h1>
       </div>
     );
 }
