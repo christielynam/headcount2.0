@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Search from './Search';
 
-const Header = () => {
+const Header = (props) => {
     return (
       <div>
-        <Search />
+        <Search search={props.search} />
         <h1>Headcount 2.0</h1>
       </div>
     );
