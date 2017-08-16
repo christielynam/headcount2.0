@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import DataCard from './DataCard';
+import PropTypes from 'prop-types';
+
 
 const BottomContainer = ({ schoolData }) => {
 
@@ -17,6 +19,10 @@ const BottomContainer = ({ schoolData }) => {
 
       </div>
     );
+}
+
+BottomContainer.propTypes = {
+  schoolData: PropTypes.array 
 }
 
 export default BottomContainer;

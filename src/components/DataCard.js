@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 
 
 const DataCard = ({ location, data }) => {
@@ -13,6 +15,11 @@ const DataCard = ({ location, data }) => {
 
       </div>
     );
+}
+
+DataCard.propTypes = {
+  location: PropTypes.string,
+  data: PropTypes.object
 }
 
 export default DataCard;

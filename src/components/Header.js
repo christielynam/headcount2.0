@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Search from './Search';
+import PropTypes from 'prop-types';
+
 
 const Header = (props) => {
     return (
@@ -8,6 +10,10 @@ const Header = (props) => {
         <h1>Headcount 2.0</h1>
       </div>
     );
+}
+
+Header.propTypes = {
+  search: PropTypes.func
 }
 
 export default Header;
