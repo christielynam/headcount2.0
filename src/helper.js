@@ -28,8 +28,41 @@ export default class DistrictRepository {
     if (string) {
       return dataArray.filter( object => object.location.includes(string.toUpperCase()))
     }
-
     return dataArray
+  }
+
+  findAverage(string) {
+    const districtDataObj = this.findByName(string).data
+
+    const districtKeys = Object.keys(districtDataObj)
+
+    const total = districtKeys.reduce((sum, year) => {
+      sum += districtDataObj[year]
+      return sum
+    }, 0)
+
+    const average = Math.round((total / districtKeys.length) * 1000) / 1000
+
+    return average
+  }
+
+  compareDistrictAverages(firstLocale, secondLocale) {
+    const result = {}
+    const bigFirstLocale = firstLocale.toUpperCase()
+    const bigSecondLocale = secondLocale.toUpperCase()
+
+    result[bigFirstLocale] = this.findAverage(firstLocale)
+
+    result[bigSecondLocale] = this.findAverage(secondLocale)
+
+    const ratio = Math.round((result[bigFirstLocale] / result[bigSecondLocale]) * 1000) / 1000
+    console.log(ratio);
+
+    result.compared = ratio
+
+    return result
+
+
   }
 
 }
