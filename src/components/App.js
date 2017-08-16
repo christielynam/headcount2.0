@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import '../App.css';
 import Header from './Header';
 import BottomContainer from './BottomContainer';
@@ -29,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header handleChange={this.handleChange} search={this.searchLocation} />
+        <Header search={this.searchLocation} />
         <BottomContainer schoolData={this.state.data} />
       </div>
     );

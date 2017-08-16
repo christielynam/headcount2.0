@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-
 class Search extends Component {
   constructor() {
     super();
@@ -10,7 +9,6 @@ class Search extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
   }
-
 
   handleChange(e) {
     this.setState({
