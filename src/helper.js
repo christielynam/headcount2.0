@@ -28,7 +28,6 @@ export default class DistrictRepository {
     if (string) {
       return dataArray.filter( object => object.location.includes(string.toUpperCase()))
     }
-    console.log(dataArray)
     return dataArray
   }
 

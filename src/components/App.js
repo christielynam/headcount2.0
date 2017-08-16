@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../App.css';
 import Header from './Header';
 import BottomContainer from './BottomContainer';
 import DistrictRepository from '../helper';
@@ -11,15 +12,25 @@ class App extends Component {
     this.state = {
       data: []
     }
+    this.searchLocation = this.searchLocation.bind(this)
   }
 
   componentDidMount() {
     this.setState({ data: district.findAllMatches() })
   }
+
+  searchLocation(string) {
+    this.setState({
+      data: district.findAllMatches(string)
+    })
+  }
+
+
+
   render() {
     return (
       <div>
-        <Header />
+        <Header handleChange={this.handleChange} search={this.searchLocation} />
         <BottomContainer schoolData={this.state.data} />
       </div>
     );
