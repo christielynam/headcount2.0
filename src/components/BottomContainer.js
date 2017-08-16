@@ -4,18 +4,16 @@ import PropTypes from 'prop-types';
 
 const BottomContainer = ({ schoolData }) => {
 
+  const cardList = schoolData.map( object =>
+    <DataCard
+        key={object.location}
+        location={object.location}
+        data={object.data}
+    /> )
+
     return (
       <div className='bottom-container'>
-
-      {
-        schoolData.map( object =>
-          <DataCard
-              key={object.location}
-              location={object.location}
-              data={object.data}
-          /> )
-      }
-
+        {cardList}
       </div>
     );
 }
