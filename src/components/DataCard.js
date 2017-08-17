@@ -16,8 +16,6 @@ const DataCard = ({ location, data }) => {
     }
   })
 
-
-
     return (
       <div className='data-card'>
         <h3 className='school-district'>{location}</h3>
