@@ -7,7 +7,6 @@ import mockData from '../testHelpers/mockData';
 
 describe('Header tests', () => {
   let wrapper;
-  const props = { search: jest.fn() }
 
   beforeEach( () => {
     wrapper = mount(<Header search={ jest.fn() } />)
