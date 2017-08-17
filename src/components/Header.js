@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 const Header = (props) => {
 
     const imageStyles = {
-      backgroundImage: 'url("https://cdn.pixabay.com/photo/2012/04/14/16/54/color-pencils-34595_960_720.png")',
+      backgroundImage: 'url("/assets/colored-pencils-png.png")',
+      // backgroundImage: 'url("https://cdn.pixabay.com/photo/2012/04/14/16/54/color-pencils-34595_960_720.pn")',
       backgroundPosition: 'center',
       backgroundSize: 'contain',
     }
