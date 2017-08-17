@@ -7,10 +7,9 @@ import mockData from '../testHelpers/mockData';
 
 describe('Header tests', () => {
   let wrapper;
-  const props = { search: jest.fn() }
 
   beforeEach( () => {
-    wrapper = shallow(<Header {...props} />)
+    wrapper = mount(<Header search={ jest.fn() } />)
   });
 
   it('should exist', () => {
@@ -28,7 +27,8 @@ describe('Header tests', () => {
   })
 
   it('should take in a function as a property', () => {
-    expect(wrapper.find('Search').prop('search')).toBe(wrapper.instance().search)
+    console.log(wrapper.find('Search').prop('search'));
+    expect(wrapper.find('Search').prop('search')._isMockFunction).toBe(true)
   })
 
 })
