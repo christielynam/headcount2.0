@@ -14,10 +14,21 @@ describe('Search tests', () => {
   it('should exist', () => {
     expect(wrapper).toBeDefined();
   })
-  // it('should render the correct amount of data cards', () => {
-  //   const dataCards = wrapper.find('DataCard')
-  //
-  //   expect(dataCards.length).toEqual(100);
-  // })
 
+  it('should render an input field', () => {
+    expect(wrapper.find('input').length).toEqual(1)
+  })
+
+  it('should have a default state', () => {
+    expect(wrapper.state().input).toEqual('')
+  })
+
+  it('should let us change state', () => {
+    wrapper = mount(<Search search={jest.fn()} />)
+    const input = wrapper.find('input')
+    input.simulate('change', {target: {value: 'abc'}})
+
+    expect(wrapper.state().input).toEqual('abc')
+  })
+  
 })

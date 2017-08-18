@@ -17,14 +17,21 @@ describe('DataCard tests', () => {
     expect(wrapper).toBeDefined();
   })
 
-  // it('should render a div with className of dataCard', () => {
-  //
-  // })
+  it('should render a div with className of dataCard', () => {
+
+    expect(wrapper.find('.data-card').length).toEqual(1)
+  })
 
   it('should render an h3 tag', () => {
     const district = wrapper.find('.school-district')
 
     expect(district.text()).toEqual(mockObject.location);
+  })
+
+  it('should render an array of school data', () => {
+    const schoolData = wrapper.find('.school-data')
+
+    expect(schoolData.length).toEqual(11)
   })
 
 })

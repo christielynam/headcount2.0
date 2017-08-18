@@ -10,9 +10,11 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      data: []
+      data: [],
+      comparedData: []
     }
     this.searchLocation = this.searchLocation.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
@@ -25,11 +27,19 @@ class App extends Component {
     })
   }
 
+  handleClick(location) {
+    const foundLocation = district.findByName(location)
+    this.state.comparedData.push(foundLocation)
+    this.setState({
+      comparedData: this.state.comparedData
+    })
+  }
+
   render() {
     return (
       <div>
         <Header search={this.searchLocation} />
-        <BottomContainer schoolData={this.state.data} />
+        <BottomContainer schoolData={this.state.data} handleClick={this.handleClick} />
       </div>
     );
   }
