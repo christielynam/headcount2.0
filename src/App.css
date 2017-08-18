@@ -12,6 +12,7 @@ input {
   font-size: 25px;
   border: 5px solid #011627;
   border-radius: 15px;
+  outline: none;
 }
 
 h1 {
@@ -37,6 +38,7 @@ h1 {
 
 .data-card {
   width: 250px;
+  height: 600px;
   margin: 20px;
   padding: 15px;
   cursor: pointer;
@@ -47,13 +49,13 @@ h1 {
 
 .selected-data-card {
   width: 250px;
+  height: 600px;
   margin: 20px;
   padding: 15px;
   cursor: pointer;
   text-align: center;
   border: 10px solid #FF9F1C;
   border-radius: 15px;
-  /*box-shadow: 3px 3px 3px 3px #FF9F1C;*/
   background-color: #011627;
 }
 
