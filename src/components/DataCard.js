@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const DataCard = ({ location, data }) => {
+const DataCard = ({ location, data, handleClick }) => {
 
   const colorIndicator = {
     color: '#E71D36',
@@ -17,9 +17,11 @@ const DataCard = ({ location, data }) => {
   })
 
     return (
-      <div className='data-card'>
-        <h3 className='school-district'>{location}</h3>
-        {cardContent}
+      <div>
+        <div className='data-card' onClick={ () => handleClick(location) }>
+          <h3 className='school-district'>{location}</h3>
+          {cardContent}
+        </div>
       </div>
     );
 }
