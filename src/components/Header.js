@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Search from './Search';
 import PropTypes from 'prop-types';
 
-const Header = ({search}) => {
+const Header = ({ search, input }) => {
 
     const imageStyles = {
       // backgroundImage: 'url("/assets/colored-pencils-png.png")',
@@ -15,13 +15,17 @@ const Header = ({search}) => {
            style={imageStyles}
            >
         <h1 className='header-title'>Headcount 2.0... School is Kewl</h1>
-        <Search search={search} />
+        <Search
+          search={search}
+          input={input}
+        />
       </div>
     );
 }
 
 Header.propTypes = {
-  search: PropTypes.func
+  search: PropTypes.func,
+  input: PropTypes.string,
 }
 
 export default Header;

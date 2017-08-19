@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import DataCard from './DataCard';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const Comparison = ({ comparedData, compareAverages }) => {
@@ -29,8 +28,8 @@ const Comparison = ({ comparedData, compareAverages }) => {
 }
 
 Comparison.propTypes = {
-  comparedData: PropTypes.array
-
+  comparedData: PropTypes.array,
+  compareAverages: PropTypes.func,
 }
 
 export default Comparison;

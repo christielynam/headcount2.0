@@ -1,34 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class Search extends Component {
-  constructor() {
-    super();
-    this.state = {
-      input: ''
-    }
-    this.handleChange = this.handleChange.bind(this)
-  }
-
-  handleChange(e) {
-    this.setState({
-      input: e.target.value
-    }, () => {
-      this.props.search(this.state.input)
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <input placeholder='Search a location' onChange={this.handleChange} />
-      </div>
-    );
-  }
+const Search = ({ search, input }) => {
+  return (
+    <div>
+      <input
+        value={input}
+        placeholder='Search a location'
+        onChange={(e) => search(e.target.value)}
+      />
+    </div>
+  );
 }
 
 Search.propTypes = {
-  onChange: PropTypes.func
+  search: PropTypes.func,
+  input: PropTypes.string,
 }
 
 export default Search;

@@ -50,7 +50,8 @@ class DataCard extends Component {
 
 DataCard.propTypes = {
   location: PropTypes.string,
-  data: PropTypes.object
+  data: PropTypes.object,
+  handleClick: PropTypes.func,
 }
 
 export default DataCard;
