@@ -89,11 +89,17 @@ input {
   font-weight: bold;
 }
 
+.top-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 250px;
+
+}
+
 .bottom-container {
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 250px;
   background-color: #FDFFFC;
 }
