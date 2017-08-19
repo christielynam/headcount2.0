@@ -105,3 +105,24 @@ input {
   justify-content: center;
   background-color: #FDFFFC;
 }
+
+.comparison {
+  height: 625px;
+  width: 625px;
+  margin: 20px;
+  padding: 15px;
+  border: 10px solid #FF9F1C;
+  border-radius: 15px;
+  background-color: #011627;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 1s;
+}
+
+.comparison h3 {
+  color: #FF9F1C;
+}
+
+.comparison p {
+  color: #2EC4B6;
+}

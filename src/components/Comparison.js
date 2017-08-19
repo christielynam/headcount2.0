@@ -11,13 +11,16 @@ const Comparison = ({ comparedData }) => {
     </article>)
   })
 
+  const ratio = Math.round((comparedData[0].average / comparedData[1].average) * 1000) / 1000
+
     return (
       <div className='comparison'>
         <section className='top-section'>
           {comparedAverages}
         </section>
         <section className='ratio'>
-
+          <h3>Ratio: </h3>
+          <p>{ratio}</p>
         </section>
       </div>
     );
