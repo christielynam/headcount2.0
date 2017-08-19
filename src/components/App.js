@@ -43,7 +43,10 @@ class App extends Component {
 
     if (locationMatch.length === 1) {
       const locationIndex = this.state.comparedData.indexOf(locationMatch[0])
+      let splicedObj = this.state.comparedData.splice(locationIndex, 1)
+
       this.state.comparedData.splice(locationIndex, 1)
+      console.log('splicedObj', splicedObj);
 
       this.setState({
         input: '',

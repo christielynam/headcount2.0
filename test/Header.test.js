@@ -27,7 +27,6 @@ describe('Header tests', () => {
   })
 
   it('should take in a function as a property', () => {
-    console.log(wrapper.find('Search').prop('search'));
     expect(wrapper.find('Search').prop('search')._isMockFunction).toBe(true)
   })
 

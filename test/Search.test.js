@@ -8,7 +8,9 @@ describe('Search tests', () => {
   let wrapper;
 
   beforeEach( () => {
-    wrapper = shallow(<Search />)
+    wrapper = mount(<Search
+      search={ jest.fn() }
+      input={''} />)
   })
 
   it('should exist', () => {
@@ -19,16 +21,8 @@ describe('Search tests', () => {
     expect(wrapper.find('input').length).toEqual(1)
   })
 
-  it('should have a default state', () => {
-    expect(wrapper.state().input).toEqual('')
+  it('should take in a function as a property', () => {
+    expect(wrapper.prop('search')._isMockFunction).toBe(true)
   })
 
-  it('should let us change state', () => {
-    wrapper = mount(<Search search={jest.fn()} />)
-    const input = wrapper.find('input')
-    input.simulate('change', {target: {value: 'abc'}})
-
-    expect(wrapper.state().input).toEqual('abc')
-  })
-  
 })
