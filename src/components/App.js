@@ -11,6 +11,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
+      input: '',
       data: [],
       comparedData: []
     }
@@ -24,6 +25,7 @@ class App extends Component {
 
   searchLocation(string) {
     this.setState({
+      input: string,
       data: district.findAllMatches(string)
     })
   }
@@ -41,10 +43,11 @@ class App extends Component {
 
     if (locationMatch.length === 1) {
       const locationIndex = this.state.comparedData.indexOf(locationMatch[0])
-      console.log(locationIndex)
       this.state.comparedData.splice(locationIndex, 1)
 
       this.setState({
+        input: '',
+        data: district.findAllMatches(),
         comparedData: this.state.comparedData
       })
     } else if (this.state.comparedData.length === 2) {
@@ -53,6 +56,8 @@ class App extends Component {
       this.state.comparedData.push(clonedLocation)
       this.state.comparedData.shift()
       this.setState({
+        input: '',
+        data: district.findAllMatches(),
         comparedData: this.state.comparedData
       })
     } else {
@@ -60,6 +65,8 @@ class App extends Component {
       const clonedLocation = this.cloneObject(foundLocation)
       this.state.comparedData.push(clonedLocation)
       this.setState({
+        input: '',
+        data: district.findAllMatches(),
         comparedData: this.state.comparedData
       })
     }
@@ -69,10 +76,18 @@ class App extends Component {
 
     return (
       <div>
-        <Header search={this.searchLocation} />
-        <TopContainer comparedData={this.state.comparedData} handleClick={this.handleClick}
-        compareAverages={district.compareDistrictAverages.bind(district)} />
-        <BottomContainer schoolData={this.state.data} handleClick={this.handleClick} />
+        <Header
+          search={this.searchLocation}
+          input={this.state.input}
+        />
+        <TopContainer
+          comparedData={this.state.comparedData}
+          handleClick={this.handleClick}
+          compareAverages={district.compareDistrictAverages.bind(district)}
+        />
+        <BottomContainer
+          schoolData={this.state.data} handleClick={this.handleClick}
+        />
       </div>
     );
   }

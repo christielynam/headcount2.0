@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DataCard from './DataCard';
 import PropTypes from 'prop-types';
 
@@ -21,8 +21,7 @@ const BottomContainer = ({ schoolData, handleClick }) => {
 
 BottomContainer.propTypes = {
   schoolData: PropTypes.array,
-  handleClick: PropTypes.func
-  
+  handleClick: PropTypes.func,
 }
 
 export default BottomContainer;
