@@ -43,6 +43,13 @@ class App extends Component {
       this.setState({
         comparedData: this.state.comparedData
       })
+    } else if (this.state.comparedData.length === 2) {
+      const foundLocation = district.findByName(location)
+      this.state.comparedData.push(foundLocation)
+      this.state.comparedData.shift()
+      this.setState({
+        comparedData: this.state.comparedData
+      })
     } else {
       const foundLocation = district.findByName(location)
       this.state.comparedData.push(foundLocation)
