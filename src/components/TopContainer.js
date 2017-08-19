@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import DataCard from './DataCard';
+import Comparison from './Comparison';
 
 const TopContainer = ({ comparedData, handleClick }) => {
 
@@ -15,6 +16,10 @@ const TopContainer = ({ comparedData, handleClick }) => {
     return (
       <div className='top-container'>
         {comparedList}
+        { (comparedData.length === 2) &&
+        <div>
+          <Comparison comparedData={comparedData} />
+        </div> }
       </div>
     );
 }
