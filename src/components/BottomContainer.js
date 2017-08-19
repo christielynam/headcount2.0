@@ -20,7 +20,9 @@ const BottomContainer = ({ schoolData, handleClick }) => {
 }
 
 BottomContainer.propTypes = {
-  schoolData: PropTypes.array
+  schoolData: PropTypes.array,
+  handleClick: PropTypes.func
+  
 }
 
 export default BottomContainer;
