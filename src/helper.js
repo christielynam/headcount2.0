@@ -56,7 +56,6 @@ export default class DistrictRepository {
     result[bigSecondLocale] = this.findAverage(secondLocale)
 
     const ratio = Math.round((result[bigFirstLocale] / result[bigSecondLocale]) * 1000) / 1000
-    console.log(ratio);
 
     result.compared = ratio
 

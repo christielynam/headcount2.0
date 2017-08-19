@@ -28,6 +28,10 @@ class App extends Component {
     })
   }
 
+  cloneObject(obj) {
+    return Object.assign({}, obj, {average: district.findAverage(obj.location)})
+  }
+
   handleClick(location) {
     const locationMatch = this.state.comparedData.filter( object => {
       if (object.location === location) {
@@ -45,14 +49,16 @@ class App extends Component {
       })
     } else if (this.state.comparedData.length === 2) {
       const foundLocation = district.findByName(location)
-      this.state.comparedData.push(foundLocation)
+      const clonedLocation = this.cloneObject(foundLocation)
+      this.state.comparedData.push(clonedLocation)
       this.state.comparedData.shift()
       this.setState({
         comparedData: this.state.comparedData
       })
     } else {
       const foundLocation = district.findByName(location)
-      this.state.comparedData.push(foundLocation)
+      const clonedLocation = this.cloneObject(foundLocation)
+      this.state.comparedData.push(clonedLocation)
       this.setState({
         comparedData: this.state.comparedData
       })
