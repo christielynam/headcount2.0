@@ -16,8 +16,6 @@ class DataCard extends Component {
     })
   }
 
-  // if location that was clicked, is no longer in comparedData array, we have to find that card by looping through the data array, and then change the this.state.clicked = false
-
   render() {
     const { location, data, handleClick } = this.props
 

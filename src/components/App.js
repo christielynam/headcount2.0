@@ -7,9 +7,12 @@ import DistrictRepository from '../helper';
 import kinderData from '../../data/kindergartners_in_full_day_program'
 const district = new DistrictRepository(kinderData)
 
+// add district as a property to app constructor, and when changing the clicked true/false property, target the original district repository object??
+
 class App extends Component {
   constructor() {
     super()
+    // this.district = new DistrictRepository(kinderData)
     this.state = {
       input: '',
       data: [],
@@ -34,6 +37,18 @@ class App extends Component {
     return Object.assign({}, obj, {average: district.findAverage(obj.location)})
   }
 
+  toggleClicked(removedObject) {
+    const match = this.state.data.filter( object => {
+      if (object === removedObject) {
+        return object
+      }
+    })
+
+    console.log('match', match)
+
+    match.clicked = false
+  }
+
   handleClick(location) {
     const locationMatch = this.state.comparedData.filter( object => {
       if (object.location === location) {
@@ -43,11 +58,9 @@ class App extends Component {
 
     if (locationMatch.length === 1) {
       const locationIndex = this.state.comparedData.indexOf(locationMatch[0])
-      let splicedObj = this.state.comparedData.splice(locationIndex, 1)
-
+      const splicedObj = this.state.comparedData.splice(locationIndex, 1)
       this.state.comparedData.splice(locationIndex, 1)
-      console.log('splicedObj', splicedObj);
-
+      this.toggleClass(splicedObj)
       this.setState({
         input: '',
         data: district.findAllMatches(),
@@ -57,7 +70,9 @@ class App extends Component {
       const foundLocation = district.findByName(location)
       const clonedLocation = this.cloneObject(foundLocation)
       this.state.comparedData.push(clonedLocation)
+      const shiftedObj = this.state.comparedData.shift()
       this.state.comparedData.shift()
+      this.toggleClass(shiftedObj)
       this.setState({
         input: '',
         data: district.findAllMatches(),
