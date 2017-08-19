@@ -35,10 +35,6 @@ class App extends Component {
       }
     })
 
-    debugger;
-    console.log('comparedData', this.state.comparedData);
-    console.log('location', locationMatch)
-
     if (locationMatch.length === 1) {
       const locationIndex = this.state.comparedData.indexOf(locationMatch[0])
       console.log(locationIndex)

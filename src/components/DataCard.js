@@ -16,8 +16,10 @@ class DataCard extends Component {
     })
   }
 
+  // if location that was clicked, is no longer in comparedData array, we have to find that card by looping through the data array, and then change the this.state.clicked = false
+
   render() {
-    const { location, data, handleClick, style } = this.props
+    const { location, data, handleClick } = this.props
 
     const colorIndicator = {
       color: '#E71D36',
@@ -36,7 +38,7 @@ class DataCard extends Component {
 
       return (
         <div onClick={this.toggleClass}>
-          <div className={toggleSelected} style={style} onClick={ () => handleClick(location) }>
+          <div className={toggleSelected} onClick={ () => handleClick(location) }>
             <h3 className='school-district'>{location}</h3>
             {cardContent}
           </div>

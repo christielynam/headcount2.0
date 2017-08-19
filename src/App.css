@@ -55,6 +55,8 @@ input {
   transform: scale(1.05);
 }
 
+.top-container .data-card,
+.top-container .selected-data-card,
 .selected-data-card {
   height: 625px;
   width: 250px;

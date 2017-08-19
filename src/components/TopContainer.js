@@ -4,17 +4,12 @@ import DataCard from './DataCard';
 
 const TopContainer = ({ comparedData, handleClick }) => {
 
-  const topCardzStylez = {
-    border: '10 solid #FF9F1C',
-  }
-
   const comparedList = comparedData.map( object =>
     <DataCard
       key={object.location}
       location={object.location}
       data={object.data}
       handleClick={handleClick}
-      style={topCardzStylez}
     /> )
 
     return (
