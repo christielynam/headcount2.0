@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import DataCard from './DataCard';
 import Comparison from './Comparison';
 
-const TopContainer = ({ comparedData, handleClick }) => {
+const TopContainer = ({ comparedData, handleClick, compareAverages }) => {
 
   const comparedList = comparedData.map( object =>
     <DataCard
@@ -18,7 +18,9 @@ const TopContainer = ({ comparedData, handleClick }) => {
         {comparedList}
         { (comparedData.length === 2) &&
         <div>
-          <Comparison comparedData={comparedData} />
+          <Comparison
+            comparedData={comparedData}
+            compareAverages={compareAverages} />
         </div> }
       </div>
     );

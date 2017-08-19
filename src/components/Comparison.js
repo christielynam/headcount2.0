@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import DataCard from './DataCard';
 import PropTypes from 'prop-types';
 
-const Comparison = ({ comparedData }) => {
+const Comparison = ({ comparedData, compareAverages }) => {
 
   const comparedAverages = comparedData.map(obj => {
     return (<article key={obj.location}>
@@ -11,7 +11,9 @@ const Comparison = ({ comparedData }) => {
     </article>)
   })
 
-  const ratio = Math.round((comparedData[0].average / comparedData[1].average) * 1000) / 1000
+  const ratio = (compareAverages(comparedData[0].location, comparedData[1].location)).compared
+
+  // const ratio = Math.round((comparedData[0].average / comparedData[1].average) * 1000) / 1000
 
     return (
       <div className='comparison'>

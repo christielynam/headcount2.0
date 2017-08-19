@@ -70,7 +70,8 @@ class App extends Component {
     return (
       <div>
         <Header search={this.searchLocation} />
-        <TopContainer comparedData={this.state.comparedData} handleClick={this.handleClick} />
+        <TopContainer comparedData={this.state.comparedData} handleClick={this.handleClick}
+        compareAverages={district.compareDistrictAverages.bind(district)} />
         <BottomContainer schoolData={this.state.data} handleClick={this.handleClick} />
       </div>
     );
