@@ -45,7 +45,7 @@ describe('Comparison tests', () => {
       compareAverages={ jest.fn() } />)
   })
 
-  it('should exist', () => {
+  it.skip('should exist', () => {
     expect(wrapper).toBeDefined();
   })
 
