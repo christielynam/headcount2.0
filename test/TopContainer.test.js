@@ -51,4 +51,39 @@ describe('TopContainer tests', () => {
     expect(wrapper).toBeDefined();
   })
 
+  it('should render the correct amount of data cards', () => {
+    const dataCards = wrapper.find('DataCard')
+
+    expect(dataCards.length).toEqual(2);
+  })
+
+  it('should render 1 comparison card if there are 2 items in comparedData array', () => {
+    expect(wrapper.find('Comparison').length).toEqual(1)
+  })
+
+  it('should only render 1 DataCard if there is only 1 item in the comparedData array', () => {
+    const singleMockArray = [
+      { location: 'COLORADO',
+        average: 0.53,
+        data:
+         { '2004': 0.24,
+           '2005': 0.278,
+           '2006': 0.337,
+           '2007': 0.395,
+           '2008': 0.536,
+           '2009': 0.598,
+           '2010': 0.64,
+           '2011': 0.672,
+           '2012': 0.695,
+           '2013': 0.703,
+           '2014': 0.741 }
+      },
+    ]
+
+    wrapper = shallow(<TopContainer comparedData={singleMockArray} />)
+
+    expect(wrapper.find('DataCard').length).toEqual(1)
+    expect(wrapper.find('Comparison').length).toEqual(0)
+  })
+
 })
