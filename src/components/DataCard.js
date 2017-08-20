@@ -26,10 +26,10 @@ const DataCard = ({ location, data, clicked, handleClick }) => {
   );
 }
 
-
 DataCard.propTypes = {
   location: PropTypes.string,
   data: PropTypes.object,
+  clicked: PropTypes.bool,
   handleClick: PropTypes.func,
 }
 

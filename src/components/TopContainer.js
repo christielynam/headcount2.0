@@ -28,6 +28,7 @@ const TopContainer = ({ comparedData, handleClick, compareAverages }) => {
 
 TopContainer.propTypes = {
   comparedData: PropTypes.array,
+  compareAverages: PropTypes.func,
   handleClick: PropTypes.func,
 }
 
