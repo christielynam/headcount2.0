@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 const Comparison = ({ comparedData, compareAverages }) => {
 
+  // averageOne = district.findAverage(comparedData[0].location)
+
   const comparedAverages = comparedData.map(obj => {
     return (<article key={obj.location}>
       <h3>{obj.location}</h3>
