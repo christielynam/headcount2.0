@@ -85,10 +85,17 @@ input {
   font-size: 25px;
 }
 
+.data-list {
+  /*display: flex;
+  flex-direction: column;*/
+}
+
 .school-data {
+  padding: 5px;
   color: #2EC4B6;
   font-size: 20px;
   font-weight: bold;
+  list-style: none;
 }
 
 .top-container {
