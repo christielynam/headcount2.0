@@ -1,10 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { mount, shallow } from 'enzyme';
-import Comparison from '../src/components/Comparison';
-import DistrictRepository from '../src/helper';
-import mockData from '../testHelpers/mockData';
-import kinderData from '../data/kindergartners_in_full_day_program';
+import React from 'react'
+import { mount, shallow } from 'enzyme'
+import Comparison from '../src/components/Comparison'
+import DistrictRepository from '../src/helper'
+import kinderData from '../data/kindergartners_in_full_day_program'
 
 describe('Comparison tests', () => {
   let wrapper
