@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { mount, shallow } from 'enzyme';
-import DataCard from '../src/components/DataCard';
-import TopContainer from '../src/components/TopContainer';
+import Comparison from '../src/components/Comparison';
 import mockData from '../testHelpers/mockData';
 
-describe('TopContainer tests', () => {
+describe('Comparison tests', () => {
   let wrapper;
   const mockArray =  [
     { location: 'COLORADO',
@@ -41,14 +40,17 @@ describe('TopContainer tests', () => {
   ]
 
   beforeEach( () => {
-    wrapper = shallow(<TopContainer
+    wrapper = shallow(<Comparison
       comparedData={ mockArray }
-      handleClick={ jest.fn() }
       compareAverages={ jest.fn() } />)
   })
 
   it('should exist', () => {
     expect(wrapper).toBeDefined();
   })
+
+  // it('should render the correct amount of data cards', () => {
+  //
+  // })
 
 })

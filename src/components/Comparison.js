@@ -10,9 +10,9 @@ const Comparison = ({ comparedData, compareAverages }) => {
     </article>)
   })
 
-  const ratio = (compareAverages(comparedData[0].location, comparedData[1].location)).compared
+  // const ratio = (compareAverages(comparedData[0].location, comparedData[1].location)).compared
 
-  // const ratio = Math.round((comparedData[0].average / comparedData[1].average) * 1000) / 1000
+  const ratio = Math.round((comparedData[0].average / comparedData[1].average) * 1000) / 1000
 
     return (
       <div className='comparison'>
