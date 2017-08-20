@@ -1,13 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { mount, shallow } from 'enzyme';
-import Comparison from '../src/components/Comparison';
-import DistrictRepository from '../src/helper';
-import mockData from '../testHelpers/mockData';
-import kinderData from '../data/kindergartners_in_full_day_program';
+import React from 'react'
+import { mount, shallow } from 'enzyme'
+import Comparison from '../src/components/Comparison'
+import DistrictRepository from '../src/helper'
+import kinderData from '../data/kindergartners_in_full_day_program'
 
 describe('Comparison tests', () => {
-  let wrapper;
+  let wrapper
   let mockArray
   let districtRepo
 
@@ -52,11 +50,20 @@ describe('Comparison tests', () => {
 
   it('should exist', () => {
     expect(wrapper).toBeDefined();
-    wrapper.debug()
   })
 
-  // it('should render the correct amount of data cards', () => {
-  //
-  // })
+  it('should render html elements with appropriate classNames', () => {
+    expect(wrapper.find('.comparison').length).toEqual(1)
+    expect(wrapper.find('.top-section').length).toEqual(1)
+    expect(wrapper.find('.school-averages').length).toEqual(2)
+    expect(wrapper.find('.ratio').length).toEqual(1)
+  })
+
+  it('should render the appropriate data', () => {
+    expect(wrapper.find('h3').first().text()).toEqual('COLORADO')
+    expect(wrapper.find('h3').last().text()).toEqual('Ratio: ')
+    expect(wrapper.find('p').first().text()).toEqual('0.53')
+    expect(wrapper.find('p').last().text()).toEqual('1.302')
+  })
 
 })

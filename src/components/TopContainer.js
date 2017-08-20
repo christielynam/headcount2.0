@@ -6,12 +6,14 @@ import Comparison from './Comparison';
 const TopContainer = ({ comparedData, handleClick, compareAverages }) => {
 
   const comparedList = comparedData.map( object =>
-    <DataCard
-      key={object.location}
-      location={object.location}
-      data={object.data}
-      handleClick={handleClick}
-    /> )
+    <div className='slide'>
+      <DataCard
+        key={object.location}
+        location={object.location}
+        data={object.data}
+        handleClick={handleClick}
+        />
+    </div>)
 
     return (
       <div className='top-container'>

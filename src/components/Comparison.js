@@ -6,14 +6,15 @@ const Comparison = ({ comparedData, compareAverages }) => {
   const comparedObj = compareAverages(comparedData[0].location, comparedData[1].location)
   const ratio = comparedObj.compared
   const comparedAverages = comparedData.map(obj => {
-    return (<article key={obj.location}>
-      <h3>{obj.location}</h3>
-      <p>{comparedObj[obj.location]}</p>
-    </article>)
+    return (
+      <article className='school-averages' key={obj.location}>
+        <h3>{obj.location}</h3>
+        <p>{comparedObj[obj.location]}</p>
+      </article>)
   })
 
   return (
-    <div className='comparison'>
+    <div className='comparison slide'>
       <section className='top-section'>
         {comparedAverages}
       </section>

@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #FDFFFC;
+}
+
 input {
   height: 60px;
   width: 400px;
@@ -45,7 +49,7 @@ input {
   margin: 20px;
   padding: 15px;
   border-radius: 15px;
-  box-shadow: 3px 3px 3px 3px #ccc;
+  /*box-shadow: 3px 3px 3px 3px #ccc;*/
   cursor: pointer;
   text-align: center;
   transition: transform .5s;
@@ -98,12 +102,31 @@ input {
   list-style: none;
 }
 
+@keyframes slideDown {
+  0% {
+    top: -2000px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
 .top-container {
   display: flex;
   justify-content: center;
+  position: relative;
   padding-top: 250px;
-
+  background-color: #eaf9f7;
+  animation-name: slideDown;
+  animation-duration: 4s;
 }
+
+.slide {
+  position: relative;
+  animation-name: slideDown;
+  animation-duration: 2s;
+}
+
 
 .bottom-container {
   min-height: 100vh;
