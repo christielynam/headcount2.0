@@ -1,48 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class DataCard extends Component {
-  constructor() {
-    super()
-    this.state = {
-      clicked: false
+const DataCard = ({ location, data, clicked, handleClick }) => {
+
+  const colorIndicator = {
+    color: '#E71D36',
+  }
+
+  const yearKeys = Object.keys(data)
+  const cardContent = yearKeys.map( (year, i) => {
+    if (data[year] >= 0.5) {
+      return <p className='school-data' style={colorIndicator} key={i}>{year} : {data[year]}</p>
+    } else {
+       return <p className='school-data' key={i}>{year} : {data[year]}</p>
     }
-    this.toggleClass = this.toggleClass.bind(this)
-  }
+  })
 
-  toggleClass() {
-    this.setState({
-      clicked: !this.state.clicked
-    })
-  }
+  const toggleSelected = clicked ? 'selected-data-card' : 'data-card'
 
-  render() {
-    const { location, data, handleClick } = this.props
-
-    const colorIndicator = {
-      color: '#E71D36',
-    }
-
-    const yearKeys = Object.keys(data)
-    const cardContent = yearKeys.map( (year, i) => {
-      if (data[year] >= 0.5) {
-        return <p className='school-data' style={colorIndicator} key={i}>{year} : {data[year]}</p>
-      } else {
-         return <p className='school-data' key={i}>{year} : {data[year]}</p>
-      }
-    })
-
-    const toggleSelected = this.state.clicked ? 'selected-data-card' : 'data-card'
-
-      return (
-        <div onClick={this.toggleClass}>
-          <div className={toggleSelected} onClick={ () => handleClick(location) }>
-            <h3 className='school-district'>{location}</h3>
-            {cardContent}
-          </div>
-        </div>
-      );
-  }
+  return (
+      <div className={toggleSelected} onClick={ () => handleClick(location) }>
+        <h3 className='school-district'>{location}</h3>
+        {cardContent}
+      </div>
+  );
 }
 
 

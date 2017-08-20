@@ -4,9 +4,8 @@ import Header from './Header';
 import TopContainer from './TopContainer';
 import BottomContainer from './BottomContainer';
 import DistrictRepository from '../helper';
-import kinderData from '../../data/kindergartners_in_full_day_program'
+import kinderData from '../../data/kindergartners_in_full_day_program';
 const district = new DistrictRepository(kinderData)
-
 // add district as a property to app constructor, and when changing the clicked true/false property, target the original district repository object??
 
 class App extends Component {
@@ -33,55 +32,70 @@ class App extends Component {
     })
   }
 
-  cloneObject(obj) {
-    return Object.assign({}, obj, {average: district.findAverage(obj.location)})
-  }
+  // cloneObject(obj) {
+  //   return Object.assign({}, obj, {average: district.findAverage(obj.location)})
+  // }
 
-  toggleClicked(removedObject) {
-    const match = this.state.data.filter( object => {
-      if (object === removedObject) {
-        return object
-      }
-    })
+  toggleClicked(object) {
 
+    // function takes in an object that was clicked on
+    // manipulate the district object, run findByName method on the object.location (string to pass into findByName)
+    // that method returns an object, which we can then change the clicked property to the opposite value
+    console.log('argument passed in', object);
+    const match = district.findByName(object.location)
     console.log('match', match)
 
-    match.clicked = false
+    match.clicked = !match.clicked
+    console.log('match.clicked', match);
+
+    return match
   }
 
-  handleClick(location) {
+  handleClick(locationString) {
+
     const locationMatch = this.state.comparedData.filter( object => {
-      if (object.location === location) {
+      if (object.location === locationString) {
         return object
       }
     })
 
     if (locationMatch.length === 1) {
       const locationIndex = this.state.comparedData.indexOf(locationMatch[0])
-      const splicedObj = this.state.comparedData.splice(locationIndex, 1)
+
+      const splicedArray = this.state.comparedData.splice(locationIndex, 1)
+      this.toggleClicked(splicedArray[0])
       this.state.comparedData.splice(locationIndex, 1)
-      this.toggleClass(splicedObj)
+
       this.setState({
         input: '',
         data: district.findAllMatches(),
         comparedData: this.state.comparedData
       })
+
+
     } else if (this.state.comparedData.length === 2) {
-      const foundLocation = district.findByName(location)
-      const clonedLocation = this.cloneObject(foundLocation)
-      this.state.comparedData.push(clonedLocation)
+      const foundLocationObj = district.findByName(locationString)
       const shiftedObj = this.state.comparedData.shift()
-      this.state.comparedData.shift()
-      this.toggleClass(shiftedObj)
+      // debugger;
+      // this.state.comparedData.shift()
+
+      this.toggleClicked(shiftedObj)
+
+      this.state.comparedData.push(this.toggleClicked(foundLocationObj))
+
+      console.log(this.state.comparedData);
+
       this.setState({
         input: '',
         data: district.findAllMatches(),
         comparedData: this.state.comparedData
       })
+
     } else {
-      const foundLocation = district.findByName(location)
-      const clonedLocation = this.cloneObject(foundLocation)
-      this.state.comparedData.push(clonedLocation)
+      const foundLocationObj = district.findByName(locationString)
+
+      this.state.comparedData.push(this.toggleClicked(foundLocationObj))
+
       this.setState({
         input: '',
         data: district.findAllMatches(),

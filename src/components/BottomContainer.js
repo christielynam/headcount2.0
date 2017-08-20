@@ -9,6 +9,7 @@ const BottomContainer = ({ schoolData, handleClick }) => {
         key={object.location}
         location={object.location}
         data={object.data}
+        clicked={object.clicked}
         handleClick={handleClick}
     /> )
 
