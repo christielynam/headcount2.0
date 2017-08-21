@@ -5,7 +5,7 @@ const DataCard = ({ location, data, clicked, handleClick }) => {
 
   const yearKeys = Object.keys(data)
   const cardContent = yearKeys.map( (year, i) =>
-    data[year] >= 0.5 ? <li className='school-data' style={{color: '#E71D36'}} key={i}>{year} : {data[year]}</li> : <li className='school-data' key={i}>{year} : {data[year]}</li> )
+    data[year] >= 0.5 ? <li className='school-data' style={{color: '#E71D36'}} key={i}><span>{year}</span> {data[year]}</li>: <li className='school-data' key={i}><span>{year}</span>{data[year]}</li> )
 
   const toggleSelected = clicked ? 'selected-data-card' : 'data-card'
 

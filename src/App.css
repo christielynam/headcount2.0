@@ -85,13 +85,21 @@ input {
 }
 
 .school-district {
+  height: 50px;
   color: #FF9F1C;
   font-size: 25px;
 }
 
+span {
+
+  margin: 0 75px 0 15px;
+}
+
 .data-list {
-  /*display: flex;
-  flex-direction: column;*/
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .school-data {
