@@ -157,9 +157,28 @@ input {
 
 /***** COMPARISON CARD *****/
 
+.top-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.school-averages h3,
+.ratio h3 {
+  margin: 10px;
+  font-size: 30px;
+}
+
+.school-averages p,
+.ratio p {
+  font-size: 30px;
+}
+
 .comparison {
   height: 625px;
   width: 625px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 20px;
   padding: 15px;
   border: 10px solid #FF9F1C;

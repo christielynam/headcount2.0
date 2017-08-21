@@ -19,7 +19,7 @@ const Comparison = ({ comparedData, compareAverages }) => {
         {comparedAverages}
       </section>
       <section className='ratio'>
-        <h3>Ratio: </h3>
+        <h3>Ratio</h3>
         <p>{ratio}</p>
       </section>
     </div>
