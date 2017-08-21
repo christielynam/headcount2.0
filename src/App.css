@@ -1,3 +1,5 @@
+/***** BASE STYLES *****/
+
 * {
   box-sizing: border-box;
 }
@@ -5,6 +7,8 @@
 body {
   background-color: #FDFFFC;
 }
+
+/***** HEADER *****/
 
 input {
   height: 60px;
@@ -46,6 +50,8 @@ input {
   background-position: center;
   background-size: contain;
 }
+
+/***** DATACARDS *****/
 
 .data-card {
   height: 625px;
@@ -121,6 +127,8 @@ input {
   }
 }
 
+/***** DATACARDS CONTAINERS *****/
+
 .top-container {
   display: flex;
   flex-wrap: wrap;
@@ -146,6 +154,8 @@ input {
   justify-content: center;
   background-color: #FDFFFC;
 }
+
+/***** COMPARISON CARD *****/
 
 .top-section {
   display: flex;
