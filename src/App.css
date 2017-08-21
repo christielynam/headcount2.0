@@ -49,7 +49,6 @@ input {
   margin: 20px;
   padding: 15px;
   border-radius: 15px;
-  /*box-shadow: 3px 3px 3px 3px #ccc;*/
   cursor: pointer;
   text-align: center;
   transition: transform .5s;
@@ -85,13 +84,12 @@ input {
 }
 
 .school-district {
-  height: 50px;
+  height: 60px;
   color: #FF9F1C;
   font-size: 25px;
 }
 
-span {
-
+.year {
   margin: 0 75px 0 15px;
 }
 
@@ -103,12 +101,17 @@ span {
 }
 
 .school-data {
-  padding: 5px;
+  padding-bottom: 20px;
   color: #2EC4B6;
   font-size: 20px;
   font-weight: bold;
   list-style: none;
 }
+
+/*.percentage {
+  width: 100px;
+  border: 1px solid #FF9F1C;
+}*/
 
 @keyframes slideDown {
   0% {
