@@ -149,7 +149,8 @@ input {
 
 .school-averages h3,
 .ratio h3 {
-  font-size: 35px;
+  margin: 10px;
+  font-size: 30px;
 }
 
 .school-averages p,
