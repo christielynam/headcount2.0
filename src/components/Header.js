@@ -1,6 +1,6 @@
-import React from 'react';
-import Search from './Search';
-import PropTypes from 'prop-types';
+import React from 'react'
+import Search from './Search'
+import PropTypes from 'prop-types'
 
 const Header = ({ search, searchQuery }) => {
 
@@ -12,7 +12,7 @@ const Header = ({ search, searchQuery }) => {
           searchQuery={searchQuery}
         />
       </div>
-    );
+    )
 }
 
 Header.propTypes = {
@@ -20,4 +20,4 @@ Header.propTypes = {
   searchQuery: PropTypes.string,
 }
 
-export default Header;
+export default Header

@@ -49,7 +49,7 @@ describe('Comparison tests', () => {
   })
 
   it('should exist', () => {
-    expect(wrapper).toBeDefined();
+    expect(wrapper).toBeDefined()
   })
 
   it('should render html elements with appropriate classNames', () => {

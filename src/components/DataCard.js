@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const DataCard = ({ location, data, clicked, handleClick }) => {
 
@@ -28,7 +28,7 @@ const DataCard = ({ location, data, clicked, handleClick }) => {
         <h3 className='school-district'>{location}</h3>
         <ul className='data-list'>{cardContent}</ul>
       </div>
-  );
+  )
 }
 
 DataCard.propTypes = {
@@ -38,4 +38,4 @@ DataCard.propTypes = {
   handleClick: PropTypes.func,
 }
 
-export default DataCard;
+export default DataCard

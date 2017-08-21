@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import '../App.css';
-import Header from './Header';
-import TopContainer from './TopContainer';
-import BottomContainer from './BottomContainer';
-import DistrictRepository from '../helper';
-import kinderData from '../../data/kindergartners_in_full_day_program';
+import React, { Component } from 'react'
+import '../App.css'
+import Header from './Header'
+import TopContainer from './TopContainer'
+import BottomContainer from './BottomContainer'
+import DistrictRepository from '../helper'
+import kinderData from '../../data/kindergartners_in_full_day_program'
 const district = new DistrictRepository(kinderData)
 
 class App extends Component {
@@ -89,8 +89,8 @@ class App extends Component {
           schoolData={this.state.data} handleClick={this.handleClick}
         />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Search = ({ search, searchQuery }) => {
   return (
@@ -10,7 +10,7 @@ const Search = ({ search, searchQuery }) => {
         onChange={(e) => search(e.target.value)}
       />
     </div>
-  );
+  )
 }
 
 Search.propTypes = {
@@ -18,4 +18,4 @@ Search.propTypes = {
   searchQuery: PropTypes.string,
 }
 
-export default Search;
+export default Search

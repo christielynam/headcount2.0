@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import DataCard from './DataCard';
-import Comparison from './Comparison';
+import React from 'react'
+import PropTypes from 'prop-types'
+import DataCard from './DataCard'
+import Comparison from './Comparison'
 
 const TopContainer = ({ comparedData, handleClick, compareAverages }) => {
 
@@ -26,7 +26,7 @@ const TopContainer = ({ comparedData, handleClick, compareAverages }) => {
             compareAverages={compareAverages} />
         </div> }
       </div>
-    );
+    )
 }
 
 TopContainer.propTypes = {
@@ -35,4 +35,4 @@ TopContainer.propTypes = {
   handleClick: PropTypes.func,
 }
 
-export default TopContainer;
+export default TopContainer
