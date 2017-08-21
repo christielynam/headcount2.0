@@ -167,3 +167,17 @@ input {
 .comparison p {
   color: #2EC4B6;
 }
+
+/***** MEDIA QUERIES *****/
+
+@media screen and (max-width: 1000px) {
+  
+}
+
+@media screen and (max-width: 1000px) {
+
+}
+
+@media screen and (max-width: 1000px) {
+
+}
