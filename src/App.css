@@ -1,3 +1,5 @@
+/***** BASE STYLES *****/
+
 * {
   box-sizing: border-box;
 }
@@ -5,6 +7,8 @@
 body {
   background-color: #FDFFFC;
 }
+
+/***** HEADER *****/
 
 input {
   height: 60px;
@@ -46,6 +50,8 @@ input {
   background-position: center;
   background-size: contain;
 }
+
+/***** DATACARDS *****/
 
 .data-card {
   height: 625px;
@@ -112,11 +118,6 @@ input {
   list-style: none;
 }
 
-/*.percentage {
-  width: 100px;
-  border: 1px solid #FF9F1C;
-}*/
-
 @keyframes slideDown {
   0% {
     top: -2000px;
@@ -126,8 +127,11 @@ input {
   }
 }
 
+/***** DATACARDS CONTAINERS *****/
+
 .top-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   position: relative;
   padding-top: 250px;
@@ -150,6 +154,8 @@ input {
   justify-content: center;
   background-color: #FDFFFC;
 }
+
+/***** COMPARISON CARD *****/
 
 .comparison {
   height: 625px;
@@ -187,6 +193,43 @@ input {
   input {
     margin-bottom: 15px;
   }
+
+  .comparison {
+    width: 550px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .comparison {
+    width: 250px;
+  }
+
+  .top-section {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .comparison {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 550px;
+    height: 325px;
+  }
+
+  .top-section {
+    flex-direction: row;
+  }
+
+  .school-averages p,
+  .ratio p {
+    font-size: 22px;
+  }
+
+  .school-averages h3,
+  .ratio h3 {
+    font-size: 23px;
+  }
 }
 
 @media screen and (max-width: 880px) {
@@ -222,7 +265,11 @@ input {
     margin-bottom: 25px;
   }
 
-  .data-card {
+  .top-container .data-card,
+  .top-container .selected-data-card,
+  .data-card,
+  .selected-data-card,
+  .comparison {
     width: 400px;
   }
 
@@ -241,7 +288,11 @@ input {
     margin-bottom: 35px;
   }
 
-  .data-card {
+  .top-container .data-card,
+  .top-container .selected-data-card,
+  .data-card,
+  .selected-data-card,
+  .comparison {
     width: 300px;
   }
 
@@ -266,7 +317,11 @@ input {
     font-size: 16px;
   }
 
-  .data-card {
+  .top-container .data-card,
+  .top-container .selected-data-card,
+  .data-card,
+  .selected-data-card,
+  .comparison {
     width: 280px;
   }
 
