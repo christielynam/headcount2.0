@@ -1,21 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-const Search = ({ search, input }) => {
+const Search = ({ search, searchQuery }) => {
   return (
     <div>
       <input
-        value={input}
+        value={searchQuery}
         placeholder='Search a location'
         onChange={(e) => search(e.target.value)}
       />
     </div>
-  );
+  )
 }
 
 Search.propTypes = {
   search: PropTypes.func,
-  input: PropTypes.string,
+  searchQuery: PropTypes.string,
 }
 
-export default Search;
+export default Search

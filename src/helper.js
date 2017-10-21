@@ -6,18 +6,22 @@ export default class DistrictRepository {
   filterData(kinderData) {
     return kinderData.reduce((acc, obj) => {
       if (!acc[obj.Location]) {
-        acc[obj.Location] = {location: obj.Location.toUpperCase(), data: {}, clicked: false};
+        acc[obj.Location] = {
+          location: obj.Location.toUpperCase(),
+          data: {},
+          clicked: false
+        }
       }
-      acc[obj.Location].data[obj.TimeFrame] = Math.round(1000 * obj.Data) / 1000 || 0;
-      return acc;
+      acc[obj.Location].data[obj.TimeFrame] = Math.round(1000 * obj.Data) / 1000 || 0
+      return acc
     }, {})
   }
 
   findByName(string) {
     if (string) {
-      const locationKeys = Object.keys(this.data);
-      const found = locationKeys.find(location => location.toUpperCase() === string.toUpperCase());
-      return this.data[found];
+      const locationKeys = Object.keys(this.data)
+      const found = locationKeys.find(location => location.toUpperCase() === string.toUpperCase())
+      return this.data[found]
     }
   }
 
@@ -33,7 +37,6 @@ export default class DistrictRepository {
 
   findAverage(string) {
     const districtDataObj = this.findByName(string).data
-
     const districtKeys = Object.keys(districtDataObj)
 
     const total = districtKeys.reduce((sum, year) => {
@@ -41,9 +44,7 @@ export default class DistrictRepository {
       return sum
     }, 0)
 
-    const average = Math.round((total / districtKeys.length) * 1000) / 1000
-
-    return average
+    return Math.round((total / districtKeys.length) * 1000) / 1000
   }
 
   compareDistrictAverages(firstLocale, secondLocale) {
@@ -60,8 +61,5 @@ export default class DistrictRepository {
     result.compared = ratio
 
     return result
-
-
   }
-
 }

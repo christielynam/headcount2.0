@@ -1,10 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Comparison = ({ comparedData, compareAverages }) => {
 
   const comparedObj = compareAverages(comparedData[0].location, comparedData[1].location)
   const ratio = comparedObj.compared
+
   const comparedAverages = comparedData.map(obj => {
     return (
       <article className='school-averages' key={obj.location}>
@@ -31,4 +32,4 @@ Comparison.propTypes = {
   compareAverages: PropTypes.func,
 }
 
-export default Comparison;
+export default Comparison

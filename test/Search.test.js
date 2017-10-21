@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { mount, shallow } from 'enzyme';
-import Search from '../src/components/Search';
-import mockData from '../testHelpers/mockData';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { mount, shallow } from 'enzyme'
+import Search from '../src/components/Search'
+import mockData from '../testHelpers/mockData'
 
 describe('Search tests', () => {
-  let wrapper;
+  let wrapper
 
   beforeEach( () => {
     wrapper = mount(<Search
@@ -14,7 +14,7 @@ describe('Search tests', () => {
   })
 
   it('should exist', () => {
-    expect(wrapper).toBeDefined();
+    expect(wrapper).toBeDefined()
   })
 
   it('should render an input field', () => {

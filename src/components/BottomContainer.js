@@ -1,6 +1,6 @@
-import React from 'react';
-import DataCard from './DataCard';
-import PropTypes from 'prop-types';
+import React from 'react'
+import DataCard from './DataCard'
+import PropTypes from 'prop-types'
 
 const BottomContainer = ({ schoolData, handleClick }) => {
 
@@ -17,7 +17,7 @@ const BottomContainer = ({ schoolData, handleClick }) => {
       <div className='bottom-container'>
         {cardList}
       </div>
-    );
+    )
 }
 
 BottomContainer.propTypes = {
@@ -25,4 +25,4 @@ BottomContainer.propTypes = {
   handleClick: PropTypes.func,
 }
 
-export default BottomContainer;
+export default BottomContainer

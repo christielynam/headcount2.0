@@ -1,23 +1,23 @@
-import React from 'react';
-import Search from './Search';
-import PropTypes from 'prop-types';
+import React from 'react'
+import Search from './Search'
+import PropTypes from 'prop-types'
 
-const Header = ({ search, input }) => {
+const Header = ({ search, searchQuery }) => {
 
     return (
       <div className='header'>
         <h1 className='header-title'>Headcount 2.0... School is Kewl</h1>
         <Search
           search={search}
-          input={input}
+          searchQuery={searchQuery}
         />
       </div>
-    );
+    )
 }
 
 Header.propTypes = {
   search: PropTypes.func,
-  input: PropTypes.string,
+  searchQuery: PropTypes.string,
 }
 
-export default Header;
+export default Header

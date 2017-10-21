@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { mount, shallow } from 'enzyme';
-import DataCard from '../src/components/DataCard';
-import TopContainer from '../src/components/TopContainer';
-import mockData from '../testHelpers/mockData';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { mount, shallow } from 'enzyme'
+import DataCard from '../src/components/DataCard'
+import TopContainer from '../src/components/TopContainer'
+import mockData from '../testHelpers/mockData'
 
 describe('TopContainer tests', () => {
-  let wrapper;
+  let wrapper
   const mockArray =  [
     { location: 'COLORADO',
       average: 0.53,
@@ -48,13 +48,13 @@ describe('TopContainer tests', () => {
   })
 
   it('should exist', () => {
-    expect(wrapper).toBeDefined();
+    expect(wrapper).toBeDefined()
   })
 
   it('should render the correct amount of data cards', () => {
     const dataCards = wrapper.find('DataCard')
 
-    expect(dataCards.length).toEqual(2);
+    expect(dataCards.length).toEqual(2)
   })
 
   it('should render 1 comparison card if there are 2 items in comparedData array', () => {
